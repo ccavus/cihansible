@@ -5,7 +5,7 @@
   gather_facts: false
   tasks:
     - name: Clone template to new virtual machine
-      communinty.vmware.vmware_guest:
+      community.vmware.vmware_guest:
         validate_certs: false
         name: "{{ vm_name }}"
         template: template_ubuntu22
