@@ -21,6 +21,5 @@
       hotadd_memory: False
     networks:
     - name: VM Network
-    wait_for_ip_address: yes
   delegate_to: localhost
   register: deploy
