@@ -1,7 +1,0 @@
----
-- name: mv the docker repo
-  command: mv /etc/yum.repos.d/docker.repo /etc/yum.repos.d/docker.repo.save
-  ignore_errors: yes
-
-- name: add docker repo
-  command: spacewalk-channel --add -c dockercentos7 -u swadmin -p reload

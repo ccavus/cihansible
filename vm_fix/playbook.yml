@@ -1,9 +1,0 @@
----
-# playbook to fix some missing parts at DR
-#
-- name: explanation
-  hosts: all
-  #serial:
-  #  - 1
-  roles:
-    - vm_fix

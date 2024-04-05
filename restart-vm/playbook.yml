@@ -1,9 +1,0 @@
----
-# playbook to power on the given vm
-#
-- name: Restart the vm
-  hosts: all
-  serial:
-    - 1
-  roles:
-      - restart-vm

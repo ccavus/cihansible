@@ -1,6 +1,0 @@
----
-- name: Add the user 'mysqltunnel' with a specific uid and guid
-  user:
-    name: mysqltunnel
-    state: absent
-    remove: yes

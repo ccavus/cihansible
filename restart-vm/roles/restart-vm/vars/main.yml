@@ -1,2 +1,0 @@
----
-vm_name: "{{ vm_name }}"
