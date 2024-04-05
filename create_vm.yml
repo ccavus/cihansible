@@ -31,5 +31,5 @@
       ignore_errors: true
 
     - name: Pause for 30 seconds to wait for Reboot
-      ansible.builtin.pause
+      ansible.builtin.pause:
         seconds: "30" 
