@@ -1,0 +1,35 @@
+---
+- name: Create VM from Vcenter Template
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: Clone template to new virtual machine
+      comminty.vmware.vmware_guest:
+        validate_certs: false
+        name: "{{ vm_name }}"
+        template: template_ubuntu22
+        datacenter: cihdc
+        folder: "/"
+        state: poweredon
+        wait_for_ip_address: true
+
+- name: Set VM IP and Hostname 
+  hosts: 192.168.0.200
+  tasks:
+    - name: Update IP 
+      ansible.builtin.lineinfile:
+      path: /etc/netplan/00-installer-config.yaml 
+      regex: "- 192.168.0.225/24"
+      line: "- 192.168.0.230"
+
+    - name: Update Hostname
+      ansible.builtin.hostname:
+          name: "{{ hostname }}.host.vmadmin.local"
+    - name: Reboot
+      ansible.builtin.command: "init 6"
+      ignore_errors: true
+
+    - name: Pause for 30 seconds to wait for Reboot
+      ansible.builtin.pause
+        seconds: "30" 
