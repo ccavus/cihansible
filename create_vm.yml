@@ -10,18 +10,10 @@
         name: "{{ vm_name }}"
         template: template_ubuntu22
         datacenter: cihdc
+        resource_pool: cih
         folder: "/"
         state: poweredon
         wait_for_ip_address: true
-        disk:
-        - size_gb: 10
-          type: thin
-          datastore: g73_datastore
-        hardware:
-          memory_mb: 512
-          num_cpus: 1
-          num_cpu_cores_per_socket: 1
-          mem_limit: 1024
 
 - name: Set VM IP and Hostname 
   hosts: 192.168.0.200
@@ -29,7 +21,7 @@
     - name: Update IP 
       ansible.builtin.lineinfile:
         path: /etc/netplan/00-installer-config.yaml 
-        regex: "- 192.168.0.225/24"
+        regex: "- 192.168.0.230/24"
         line: "- 192.168.0.230"
 
     - name: Update Hostname
