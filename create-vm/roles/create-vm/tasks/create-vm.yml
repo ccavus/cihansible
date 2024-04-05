@@ -9,8 +9,6 @@
     name: "{{ vm_name }}"
     state: poweredon
     template: template_ubuntu22
-    disk:
-    - datastore: ds-cihvmdata01 
     hardware:
       memory_mb: 1024
       num_cpus: 1
