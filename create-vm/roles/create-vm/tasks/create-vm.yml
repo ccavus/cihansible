@@ -6,6 +6,7 @@
     password: Fenerbahce1907
     validate_certs: false
     datacenter: cihdc
+    cluster: cihcluster
     folder: "/"
     name: "{{ vm_name }}"
     state: present
