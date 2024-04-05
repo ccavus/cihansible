@@ -25,7 +25,7 @@
 
     - name: Update Hostname
       ansible.builtin.hostname:
-          name: "{{ hostname }}.host.vmadmin.local"
+        name: "{{ hostname }}.host.vmadmin.local"
     - name: Reboot
       ansible.builtin.command: "init 6"
       ignore_errors: true
