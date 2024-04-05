@@ -4,12 +4,13 @@
     hostname: 192.168.0.201
     username: awxuser@vsphere.local
     password: Fenerbahce1907
-    validate_certs: no
+    validate_certs: false
     datacenter: cihdc
     folder: "/"
     name: "{{ vm_name }}"
-    state: poweredon
+    state: present
     template: template_ubuntu22
+    wait_for_ip_address: true
     hardware:
       memory_mb: 1024
       num_cpus: 1
