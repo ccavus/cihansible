@@ -10,7 +10,7 @@
         name: "{{ vm_name }}"
         template: template_ubuntu22
         datacenter: cihdc
-        resource_pool: cih
+        resource_pool: cihtest
         folder: "/"
         state: poweredon
         wait_for_ip_address: true
