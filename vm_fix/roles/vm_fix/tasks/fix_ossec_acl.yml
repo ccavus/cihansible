@@ -1,0 +1,24 @@
+---
+- name: Add splunk to read ossec.log
+  acl:
+    path:  /var/ossec/logs/ossec.log
+    entity: splunk
+    etype: user
+    permissions: r
+    state: present
+
+- name: Add splunk to read ossec
+  acl:
+    path:  /var/ossec
+    entity: splunk
+    etype: user
+    permissions: rx
+    state: present
+
+- name: Add splunk to read ossec/logs
+  acl:
+    path:  /var/ossec/logs
+    entity: splunk
+    etype: user
+    permissions: rx
+    state: present

@@ -1,0 +1,20 @@
+#---
+#- include: hostname.yml
+#- include: cloud-init.yml
+#- include: ntp.yml
+#- include: restart.yml
+#- include: restart-network.yml
+#- include: zabbix_hostname.yml
+#- include: zabbix_servername.yml
+#- include: docker_repo_remove.yml
+#- include: stop_crond.yml
+#- include: start_crond.yml
+#- include: collectd_address_fix.yml
+#- include: set_new_network_for_docker.yml
+#- include: change_collectd_interval.yml
+#- include: disable_puppet.yml
+#- include: list_replace_docker_reg.yml
+#- include: mcoruter_config_git.yml
+#- import_tasks: fix_ossec_acl.yml
+- import_tasks: create_user.yml
+#- import_tasks: delete_user.yml

@@ -1,0 +1,5 @@
+---
+- name: start crond
+  service:
+    name: crond
+    state: started

@@ -1,0 +1,11 @@
+---
+# The VM will be powered on
+- name: Power on vm
+  vsphere_guest:
+    vcenter_hostname: aslvirpvca01.host.gittigidiyor.net
+    username: administrator@vsphere.local
+    password: xgbhK5UwcHxrG4sq
+    validate_certs: False
+    guest: "{{ vm_name }}"
+    state: powered_on
+  delegate_to: localhost

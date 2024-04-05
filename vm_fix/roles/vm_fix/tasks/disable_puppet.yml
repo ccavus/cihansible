@@ -1,0 +1,15 @@
+---
+- name: Disable puppet
+  service: 
+    name: puppet
+    state: stopped
+    enabled: no
+ 
+- name: check running puppet process
+  command: pgrep puppet
+  register: puppetstatus
+
+- name: Show puppet status
+  debug: 
+    msg="{{ inventory_hostname}}: stillrunning"
+  when: puppetstatus.rc == 0

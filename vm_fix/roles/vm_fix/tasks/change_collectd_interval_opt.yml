@@ -1,0 +1,14 @@
+---
+- name: Check collectd.conf existence at opt
+  stat: 
+    path: /opt/collectd/etc/collectd.conf
+  register: collectd_conf_opt
+
+- name: Replace the interval
+  replace:
+    dest: /opt/collectd/etc/collectd.conf
+    regexp: '^Interval     30$'
+    replace: 'Interval     60'
+    backup: yes
+  when: collectd_conf_opt.stat.exists == True
+  notify: restart collectd

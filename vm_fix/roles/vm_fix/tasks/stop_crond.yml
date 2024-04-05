@@ -1,0 +1,6 @@
+---
+- name: stop crond
+  service:
+    name: crond
+    state: stopped
+    enabled: no

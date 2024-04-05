@@ -1,0 +1,13 @@
+---
+- name: restart zabbix
+  service: 
+    name: zabbix-agent
+    state: restarted
+
+- name: restart collectd
+  service: 
+    name: collectd
+    state: restarted
+
+- name: systemctl daemon-reload
+  command: systemctl daemon-reload

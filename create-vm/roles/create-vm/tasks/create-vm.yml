@@ -1,0 +1,25 @@
+---
+- name: Create a virtual machine from a template
+  vmware_guest:
+    hostname: 192.168.0.201
+    username: awxuser@vsphere.local
+    password: Fenerbahce1907
+    validate_certs: no
+    folder: "/"
+    name: "{{ vm_name }}"
+    state: poweredon
+    template: template_ubuntu22
+    disk:
+      datastore: ds-cihvmdata01 
+    hardware:
+      memory_mb: 1024
+      num_cpus: 1
+      num_cpu_cores_per_socket: 1
+      hotadd_cpu: True
+      hotremove_cpu: True
+      hotadd_memory: False
+    networks:
+    - name: VM Network
+    wait_for_ip_address: yes
+  delegate_to: localhost
+  register: deploy

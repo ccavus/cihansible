@@ -1,0 +1,47 @@
+---
+- name: copy docker.socket
+  copy:
+    src: docker.socket
+    dest: /tmp/docker.socket
+
+
+- name: copy docker.service
+  copy:
+    src: docker.service
+    dest: /tmp/docker.service
+
+- name: copy docker.service_vg
+  copy:
+    src: docker.service_vg
+    dest: /tmp/docker.service_vg
+
+- name: copy docker.serviceiwithout_lv
+  copy:
+    src: docker.service.without_lv
+    dest: /tmp/docker.service.without_lv
+
+- name: copy the sysctl fix script
+  copy:
+    src: run.sh
+    dest: /tmp/run.sh
+
+- name: run the sysctl fix script
+  command: bash /tmp/run.sh
+#- name: insert the bind ip information
+#  lineinfile:
+#    dest: /usr/lib/systemd/system/docker.service
+#    insertafter: '^Environment="DOCKER_STORAGE_OPTIONS='
+#    line: Environment="DOCKER_OPTIONS=--bip={{ bip }}"
+#
+#- name: insert the correct docker run command 
+#  lineinfile:
+#    dest: /usr/lib/systemd/system/docker.service
+#    insertafter: '^ExecStart=/usr/bin/docker'
+#    line: ExecStart=/usr/bin/docker daemon -H tcp://0.0.0.0:2375 -H fd:// $INSECURE_REGISTRY $DOCKER_STORAGE_OPTIONS $DOCKER_OPTIONS --mtu=9000
+#
+#- name: disable the docker run line
+#  lineinfile:
+#    dest: /usr/lib/systemd/system/docker.service
+#    line: "ExecStart=/usr/bin/docker daemon -H tcp://0.0.0.0:2375 -H fd:// $INSECURE_REGISTRY $DOCKER_STORAGE_OPTIONS --mtu=9000"
+#    state: absent
+#  notify: systemctl daemon-reload

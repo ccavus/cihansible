@@ -1,0 +1,3 @@
+---
+- name: set hostname with command
+  command: hostnamectl set-hostname {{ inventory_hostname }}.host.gittigidiyor.net

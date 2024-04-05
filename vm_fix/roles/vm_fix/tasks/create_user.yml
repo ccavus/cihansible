@@ -1,0 +1,8 @@
+---
+- name: Add the user 'mysqltunnel' with a specific uid and guid
+  user:
+    name: mysqltunnel
+    uid: 600
+    shell: /bin/bash
+    createhome: yes
+    password: $6$aux5Gz1HUIphDiPS$aImXzUSFUBV.WR4HsJHfVuaNKSYnyfKvR.IX3C7qe4g3qpegccq.//sbA1Ec627F7l.Pg3cEk/eSgNXI9j/p11

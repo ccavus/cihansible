@@ -1,0 +1,8 @@
+---
+- name: install ntpdate
+  yum:
+    name: ntpdate
+    state: present
+
+
+

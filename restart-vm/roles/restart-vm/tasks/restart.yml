@@ -1,0 +1,11 @@
+---
+# The VM will be powered on
+- name: Restart vm
+  vsphere_guest:
+    vcenter_hostname: aslvirpvca01.host.gittigidiyor.net
+    username: administrator@vsphere.local
+    password: Gitti2016!!
+    validate_certs: False
+    guest: "{{ vm_name }}"
+    state: restarted
+  delegate_to: localhost

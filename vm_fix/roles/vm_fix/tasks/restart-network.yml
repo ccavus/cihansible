@@ -1,0 +1,6 @@
+---
+- name: Restart network
+  command: systemctl restart network
+  async: 0
+  poll: 0
+  ignore_errors: true
