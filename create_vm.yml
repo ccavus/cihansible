@@ -19,13 +19,14 @@
   tasks:
     - name: Update IP 
       ansible.builtin.lineinfile:
-      path: /etc/netplan/00-installer-config.yaml 
-      regex: "- 192.168.0.225/24"
-      line: "- 192.168.0.230"
+        path: /etc/netplan/00-installer-config.yaml 
+        regex: "- 192.168.0.225/24"
+        line: "- 192.168.0.230"
 
     - name: Update Hostname
       ansible.builtin.hostname:
         name: "{{ hostname }}.host.vmadmin.local"
+        
     - name: Reboot
       ansible.builtin.command: "init 6"
       ignore_errors: true
