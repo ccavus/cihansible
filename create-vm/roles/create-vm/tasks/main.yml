@@ -1,3 +1,2 @@
 ---
 - import_tasks: create-vm.yml
-- import_tasks: connect-vcenter.yml
