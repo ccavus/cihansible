@@ -1,3 +1,3 @@
 ---
 vm_name: "{{ vm_name }}"
-snapshot_name: "{{ snap_name }}"
+snapshot_name: "{{ snapshot_name }}"
