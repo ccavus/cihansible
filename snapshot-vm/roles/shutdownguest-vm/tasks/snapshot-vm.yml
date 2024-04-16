@@ -1,6 +1,6 @@
 ---
 - name: Create a snapshot
-  vmware_guest:
+  vmware_guest_snapshot:
     hostname: 192.168.0.201
     username: awxuser@vsphere.local
     password: Fenerbahce1907
