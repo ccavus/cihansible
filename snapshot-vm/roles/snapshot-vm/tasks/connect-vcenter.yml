@@ -5,3 +5,4 @@
     username: awxuser@vsphere.local
     password: Fenerbahce1907
     validate_certs: False
+    datacenter: "cihdc"
