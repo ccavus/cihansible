@@ -1,9 +1,9 @@
 ---
-# playbook to create vm 
+# playbook to poweredon vm 
 #
 - name: state the vm
   hosts: all
   serial:
     - 1
   roles:
-      - state-vm
+      - poweredon-vm

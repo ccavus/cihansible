@@ -1,3 +1,2 @@
 ---
 - import_tasks: shutdownguest-vm.yml
-- import_tasks: poweredon-vm.yml
