@@ -1,0 +1,9 @@
+---
+# playbook to create vm 
+#
+- name: state the vm
+  hosts: all
+  serial:
+    - 1
+  roles:
+      - state-vm
