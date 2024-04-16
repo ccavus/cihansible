@@ -7,6 +7,7 @@
     validate_certs: false
     name: "{{ vm_name }}"
     state: present
-    snapshot_name: "{{ snapshot_name }}"
+    snapshot_name: snap1
+    description: snap1_description
   delegate_to: localhost
   register: deploy
