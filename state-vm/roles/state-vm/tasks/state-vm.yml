@@ -6,7 +6,7 @@
     password: Fenerbahce1907
     validate_certs: false
     name: "{{ vm_name }}"
-    state: shutdown-guest
+    state: shutdownguest
     state_change_timeout: 200
   delegate_to: localhost
   register: deploy
