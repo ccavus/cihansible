@@ -2,4 +2,4 @@
 vm_name: "{{ vm_name }}"
 snapshot_name: "{{ snapshot_name }}"
 folder: "{{ folder }}"
-datacenter_name: "{{ datacenter }}"
+datacenter_name: "{{ datacenter_name }}"

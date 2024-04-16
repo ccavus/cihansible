@@ -5,7 +5,7 @@
     username: awxuser@vsphere.local
     password: Fenerbahce1907
     datacenter: "cihdc"
-    folder: "/cihdc/{{ folder }}/"
+    folder: "/{{ datacenter_name }}/{{ folder }}/"
     validate_certs: false
     name: "{{ vm_name }}"
     state: present
