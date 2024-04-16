@@ -1,0 +1,12 @@
+---
+- name: Create a snapshot
+  vmware_guest:
+    hostname: 192.168.0.201
+    username: awxuser@vsphere.local
+    password: Fenerbahce1907
+    validate_certs: false
+    name: "{{ vm_name }}"
+    state: present
+    snapshot_name: "{{ snap_name }}"
+  delegate_to: localhost
+  register: deploy

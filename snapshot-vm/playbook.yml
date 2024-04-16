@@ -1,0 +1,9 @@
+---
+# playbook to snapshot vm 
+#
+- name: snapshot the vm
+  hosts: all
+  serial:
+    - 1
+  roles:
+      - snapshot-vm
