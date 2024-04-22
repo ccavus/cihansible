@@ -1,0 +1,4 @@
+---
+- import_tasks: sysctl.yml
+- import_tasks: ufw-disabled.yml
+- import_tasks: reboot-vm.yml

@@ -1,0 +1,9 @@
+---
+# playbook to sysctl.conf
+#
+- name: sysctl
+  hosts: all
+  serial:
+    - 1
+  roles:
+      - ubuntu22-sysctl

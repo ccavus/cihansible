@@ -1,0 +1,12 @@
+---
+- name: Unconditionally reboot the machine with all defaults
+  ansible.builtin.reboot:
+
+#- name: Reboot machine using a custom reboot command
+#  ansible.builtin.reboot:
+#    reboot_command: launchctl reboot userspace
+#    boot_time_command: uptime | cut -d ' ' -f 5
+
+- name: Reboot a slow machine that might have lots of updates to apply
+  ansible.builtin.reboot:
+    reboot_timeout: 120
